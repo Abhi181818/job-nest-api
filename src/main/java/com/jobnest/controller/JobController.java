@@ -11,7 +11,7 @@ import com.jobnest.service.JobService;
 
 @RestController
 @RequestMapping("/api/jobs")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin("*")
 
 public class JobController {
 

@@ -24,6 +24,9 @@ public class ApplicationController {
 
     @PostMapping
     public Application createApplication(@RequestBody Application application) {
+        if (application.getCoverLetter() == null) {
+            application.setCoverLetter("");
+        }
         return applicationService.createApplication(application);
     }
 }

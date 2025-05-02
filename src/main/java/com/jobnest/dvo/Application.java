@@ -26,6 +26,8 @@ public class Application {
     @Column(nullable = false)
     private String status;
 
+    private String coverLetter;
+
     @ManyToOne
     @JsonBackReference("user-applications")
     private User user;
@@ -77,6 +79,14 @@ public class Application {
         this.status = status;
     }
 
+    public String getCoverLetter() {
+        return coverLetter;
+    }
+
+    public void setCoverLetter(String coverLetter) {
+        this.coverLetter = coverLetter;
+    }
+
     public User getUser() {
         return user;
     }
@@ -110,6 +120,7 @@ public class Application {
                 ", applicantName='" + applicantName + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", status='" + status + '\'' +
+                ", coverLetter='" + coverLetter + '\'' +
                 ", user=" + user +
                 ", job=" + job +
                 '}';
