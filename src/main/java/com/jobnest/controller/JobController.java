@@ -30,9 +30,6 @@ public class JobController {
 
     @PostMapping
     public Job createJob(@RequestBody Job job) {
-        if (job.getImageUrl() == null) {
-            job.setImageUrl("404.jpg");
-        }
         return jobService.createJob(job);
     }
 

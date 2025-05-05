@@ -33,11 +33,6 @@ public class UserController {
 		return userService.login(u.getEmail(), u.getPassword());
 	}
 
-	@PostMapping("/forgot-password")
-	public String forgotPassword(@RequestBody User u) {
-		userService.forgotPassword(u.getEmail(), u.getPassword());
-		return "Password updated successfully.";
-	}
 
 	@GetMapping
 	public List<User> getAll() {
@@ -49,8 +44,4 @@ public class UserController {
 		return userService.getUserById(id);
 	}
 
-	@GetMapping("/email/{email}")
-	public User getByEmail(@PathVariable String email) {
-		return userService.getUserByEmail(email);
-	}
 }
